@@ -44,6 +44,7 @@ const tabs = ref([
 const sizes = ref({
   sm: { width: 200, height: 200 },
   md: { width: 300, height: 150 },
+  md1: { width: 350, height: 350 },
   lg: { width: 400, height: 400 },
   xl: { width: 500, height: 500 },
 })
