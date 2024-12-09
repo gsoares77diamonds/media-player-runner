@@ -1,6 +1,15 @@
 <template>
   <header>
     <Tabs :tabs="tabs" v-model="currentTabIndex" />
+
+    <div>
+      <label for="size-selector">Sizes:</label>
+      <select v-model="currentSize" id="size-selector">
+        <option v-for="(size, sizeIndex) in sizes" :key="sizeIndex" :value="sizeIndex">
+          {{ sizeIndex }} - {{ size }}
+        </option>
+      </select>
+    </div>
   </header>
 
   <main>
@@ -9,18 +18,13 @@
 
       <!-- :src="`http://localhost:5173/video/${currentTab.param}`"  -->
       <div class="sizes">
-        <div class="size" v-for="(size, sizeIndex) in sizes" :key="sizeIndex">
-          <p>
-            {{ size }}
-          </p>
-
-          <iframe
-            :width="size.width"
-            :height="size.height"
-            :src="`https://video.sevenmediaviewer.com/video/${currentTab.param}`"
-            frameborder="0"
-          ></iframe>
-        </div>
+        <iframe
+          :key="currentSize"
+          :width="sizes[currentSize].width"
+          :height="sizes[currentSize].height"
+          :src="`https://video.sevenmediaviewer.com/video/${currentTab.param}`"
+          frameborder="0"
+        ></iframe>
       </div>
     </div>
   </main>
@@ -49,6 +53,7 @@ const sizes = ref({
   xl: { width: 500, height: 500 },
 })
 
+const currentSize = ref('sm')
 const currentTabIndex = ref('')
 
 const currentTab = computed(() => tabs.value[currentTabIndex.value])
@@ -57,6 +62,9 @@ const currentTab = computed(() => tabs.value[currentTabIndex.value])
 <style scoped>
 header {
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .logo {
@@ -80,5 +88,10 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
+}
+
+.sizes {
+  display: flex;
+  justify-content: center;
 }
 </style>
