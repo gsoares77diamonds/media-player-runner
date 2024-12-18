@@ -38,11 +38,43 @@ import Tabs from './components/Tabs.vue'
 const tabs = ref([
   {
     title: 'JSON',
-    params: ['RBJAWYUUUZA', 'RBJVBUA5KDB', 'RBDHPDP6BXWD', 'OVCPUQDR4XGG', 'RBJP2AQFNKU'],
+    params: [
+      'RBJAWYUUUZA',
+      'RBJVBUA5KDB',
+      'RBDHPDP6BXWD',
+      'OVCPUQDR4XGG',
+      'RBJP2AQFNKU',
+      'RBJVAHCYMYC',
+      'CUSPUIFSTNWUXACT',
+      'OVPUIFSVTTJQCXV',
+      'RADPUIFSNQNM8TKY',
+      'RBPUIFSSBFPNTXQ',
+      'CUSPUIFSU4EX6JN2',
+      'OVPUIFSGG58JDWJ',
+      'RADPUIFSJGRZTTTB',
+      'RBPUIFSMKRKHEC7',
+      'RBPUIFSKUFZPDJS',
+    ],
   },
   {
     title: 'Image',
-    params: ['RBOZKCLKOJEX', 'OVZ6MVVY7UQ', 'PRIZMGJW6H5U', 'RBJAVM8DAJ4', 'RBJXWRBQWA7'],
+    params: [
+      'RBOZKCLKOJEX',
+      'OVZ6MVVY7UQ',
+      'PRIZMGJW6H5U',
+      'RBJAVM8DAJ4',
+      'RBJXWRBQWA7',
+      'RBJVCEQXPWG',
+      'RBJVDVQSWUM',
+      'RBJ2TM8MBGA',
+      'RBPUIFSTQFWVWCA',
+      'RBPUIFSPDVZNAMW',
+      'ACMBPXNFCVT6',
+      'RADMBGDNYDSYF',
+      'EMPUIFSJPTDHR8T',
+      'RADMBUTCPGTWF',
+      'PRIMBPTSZGBVF',
+    ],
   },
   {
     title: 'HTML',
@@ -52,6 +84,12 @@ const tabs = ref([
       'RBPUIFS82DMHMXN',
       'OVPUIFS6CQKDMJG',
       'MQPUIFSB8N3JU3D',
+      'OVPUIFSBKPHEAZ3',
+      'OVPUIFSFSRGUWSK',
+      'OVPUIFSXTAZYDGN',
+      'OCTPUIFSNJJFGQEP',
+      'OVTHER7DSJSZYE',
+      'OVPUIFSSSAA6VSF',
     ],
   },
 ])
@@ -103,6 +141,8 @@ header {
 
 .sizes {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  gap: 2rem;
 }
 </style>
