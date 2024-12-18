@@ -16,15 +16,16 @@
     <div v-if="currentTab" :key="currentTabIndex">
       <h2>{{ currentTab.title }}</h2>
 
-      <!-- :src="`http://localhost:5173/video/${currentTab.param}`"  -->
       <div class="sizes">
-        <iframe
-          :key="currentSize"
-          :width="sizes[currentSize].width"
-          :height="sizes[currentSize].height"
-          :src="`https://video.sevenmediaviewer.com/video/${currentTab.param}`"
-          frameborder="0"
-        ></iframe>
+        <div v-for="code in currentTab.params" :key="code">
+          <iframe
+            :key="currentSize"
+            :width="sizes[currentSize].width"
+            :height="sizes[currentSize].height"
+            :src="`https://video.sevenmediaviewer.com/video/${code}`"
+            frameborder="0"
+          ></iframe>
+        </div>
       </div>
     </div>
   </main>
@@ -32,17 +33,27 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-
 import Tabs from './components/Tabs.vue'
 
-// JSON: https://video.sevenmediaviewer.com/video/RBJVBUA5KDB
-// ImageSet: https://video.sevenmediaviewer.com/video/RBOZKCLKOJEX
-// HTML: https://video.sevenmediaviewer.com/video/OVPUIFSHMVTGBUE
-
 const tabs = ref([
-  { title: 'JSON', param: 'RBJVBUA5KDB ' },
-  { title: 'Image', param: 'RBOZKCLKOJEX' },
-  { title: 'HTML', param: 'OVPUIFSHMVTGBUE' },
+  {
+    title: 'JSON',
+    params: ['RBJAWYUUUZA', 'RBJVBUA5KDB', 'RBDHPDP6BXWD', 'OVCPUQDR4XGG', 'RBJP2AQFNKU'],
+  },
+  {
+    title: 'Image',
+    params: ['RBOZKCLKOJEX', 'OVZ6MVVY7UQ', 'PRIZMGJW6H5U', 'RBJAVM8DAJ4', 'RBJXWRBQWA7'],
+  },
+  {
+    title: 'HTML',
+    params: [
+      'OVPUIFSHMVTGBUE',
+      'RBPUIFSWQBQGXPV',
+      'RBPUIFS82DMHMXN',
+      'OVPUIFS6CQKDMJG',
+      'MQPUIFSB8N3JU3D',
+    ],
+  },
 ])
 
 const sizes = ref({
